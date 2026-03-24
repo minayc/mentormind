@@ -12,7 +12,7 @@ import ollama
 
 
 def read_file(file_path: str) -> str:
-    path = pathlib.Path(file_path)
+    path = pathlib.Path(file_path) # creating a smart path object
     if path.suffix == ".txt":
         return path.read_text(encoding="utf-8")
     elif path.suffix == ".pdf":

@@ -16,20 +16,22 @@ def embed_query(query: str):
     return queryResponse["embedding"]
 
 
-def search_query(search_query: str) -> str:
+def search_query(search_query: str) -> list[str]:
     search_query_embedded = embed_query(search_query)
 
     client = chromadb.PersistentClient(path="./chroma_db")
     collection = client.get_collection("mentormind")
 
     result = collection.query(query_embeddings=[search_query_embedded], n_results=3)
-    for chunk in result["documents"][0]:
-            print(chunk)
     return result["documents"][0]
 
 if __name__ == '__main__':
+
     results = search_query(sys.argv[1])
-    print(results)
+    for chunk in results:
+            print(chunk)
+
+
 
 
 
