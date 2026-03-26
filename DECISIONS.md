@@ -9,9 +9,17 @@ ChromaDB. retriever.py takes a query string, embeds it with the
 same model, and returns the 3 most similar chunks from the 
 collection.
 
-## Testing Session | Date: 24.03.2026:
+## Testing Session - Day 2 | Date: 24.03.2026:
 
 **Something to improve:**
 
 Switching from character-based chunking to
 sentence or paragraph-aware chunking in the EXPANSION PHASE.
+
+## Session — Day 3 | Date: 25.03.2026
+
+**Somethings to handle later:**
+
+- The way you run coach.py
+- Proper fix: Track turns in main.py. On even turns (questions), skip evaluation. 
+On odd turns (answers), evaluate the previous user message.
